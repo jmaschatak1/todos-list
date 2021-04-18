@@ -1,25 +1,41 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from "./MyComponents/Header";
+import {ToDos} from "./MyComponents/ToDos";
+import {Footer} from "./MyComponents/Footer";
 
 function App() {
+
+const onDelete = ()=>{
+  console.log("I am onDelete");
+}
+
+  let todos = [
+    {
+      sno:1,
+      title: "Finish video from YouTube",
+      desc: "Finish watching CodeWithHarry Video from YouTube"
+    },
+    {
+      sno:2,
+      title: "Build 1st basic react application",
+      desc: "Build 1st basic react application instructed by CodeWithHarry"
+    },
+    {
+      sno:3,
+      title: "Start Course on Udemy",
+      desc: "Finish 70 hours course from Udemy"
+    }
+  ]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header title="MyToDosList" searchBar={true}/>
+      <ToDos todos={todos} onDelete={onDelete}/>
+      <Footer/>
+    </>
   );
 }
 
 export default App;
+
+//test
